@@ -14,7 +14,7 @@
       <v-list-item-group  color="primary">
         <v-list-item @click="input_gn">
           <v-list-item-icon>
-            <v-icon>mdi-mail</v-icon>
+            <v-icon>mdi-inbox</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title >Inbox</v-list-item-title>

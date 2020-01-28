@@ -1,5 +1,31 @@
 <template>
     <v-container fluid>
+        <v-card 
+                class="mx-auto">
+            <v-card-title>Block chain info</v-card-title>
+        <v-list>
+      
+      <v-list-item-group v-model="item" color="primary">
+        <v-list-item>
+          <v-list-item-icon>
+            <v-icon>mdi-dns</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>Height</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-icon>
+            <v-icon>mdi-ballot</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title >Total Pow
+            </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list-item-group>
+    </v-list>
+        </v-card>
         <v-row>
             <v-col cols="8">
                 <v-text-field outlined
