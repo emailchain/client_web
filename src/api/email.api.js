@@ -1,4 +1,4 @@
-import Repository from "./repository";
+import Repository from "./api";
 import { ENDPOINTS } from "./config";
 const EmailRepo = {
     mailbox(payload) {

@@ -66,9 +66,10 @@
                         recipient: this.to,
                         message: encryption.cipher
                     };
+                    payload.message.toString()
                     const result = await EmailRepo.add(payload);
                     if(result.data){
-
+                        result.toString()
                     }
                 } else {
                     this.errorText = encryption.status;

@@ -1,5 +1,5 @@
 <template>
-    <v-container fluid>
+    <v-container>
         <v-row>
             <v-col cols="8">
                 <v-text-field outlined
