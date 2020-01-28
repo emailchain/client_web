@@ -1,39 +1,6 @@
 <template>
 <v-container fluid>
-    <v-row>
-      <v-col cols="2">
-        <v-btn class="ma-5" color="primary" dark v-on:click="create()">New eamil 
-        <v-icon dark right>mdi-email</v-icon>
-      </v-btn>
-      <v-card flat
-    class="mx-auto"
-    max-width="300"
-    tile
-  >
-    <v-list shaped>
-      <v-list-item-group  color="primary">
-        <v-list-item @click="input_gn">
-          <v-list-item-icon>
-            <v-icon>mdi-inbox</v-icon>
-          </v-list-item-icon>
-          <v-list-item-content>
-            <v-list-item-title >Inbox</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item @click="sent_gn">
-          <v-list-item-icon>
-            <v-icon >mdi-send</v-icon>
-          </v-list-item-icon>
-          <v-list-item-content>
-            <v-list-item-title >Sent</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list-item-group>
-    </v-list>
-  </v-card>
 
-      </v-col>
-      <v-col cols="10">
   <v-card
   v-if="!showme"
     class="mx-auto"
@@ -127,8 +94,6 @@
       </v-list-item-group>
     </v-list>
   </v-card>
-      </v-col>
-    </v-row>
 </v-container>
 </template>
 <script>

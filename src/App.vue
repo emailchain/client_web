@@ -1,7 +1,7 @@
 <template>
   <v-app>
   <v-navigation-drawer
-      absolute
+      app
       permanent
       left
     >
@@ -9,6 +9,9 @@
         <v-list-item two-line>
 
           <v-list-item-content>
+             <v-btn class="mr-8" color="primary" large rounded dark v-on:click="create()">
+               <v-icon dark left>mdi-email</v-icon>New eamil
+      </v-btn>
           </v-list-item-content>
         </v-list-item>
       </template>
