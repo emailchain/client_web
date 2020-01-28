@@ -20,6 +20,7 @@
             <v-list-item-group
                     active-class="primary--text"
             >
+                <v-layout  v-if="items.length == 0" class="headline grey--text my-12" justify-space-around><div><v-icon class="pa-0" color="grey" large>mdi-emoticon-sad-outline</v-icon> Inbox is Empty</div></v-layout>
                 <template v-for="(item, index) in items">
                     <v-list-item :key="item.ID">
                         <template v-slot:default="{  }">
