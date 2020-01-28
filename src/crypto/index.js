@@ -5,7 +5,7 @@ const EmailCrypto = {
         return cryptico.encrypt(message, pubKey, RSAKey);
     },
     decrypt(cipherText, RSAKey) {
-        return cryptico.decrypt(cipherText, RSAKey).plaintext;
+        return cryptico.decrypt(cipherText, RSAKey);
     },
     generateKey(passphrase) {
         const bits = 1024;
@@ -13,6 +13,9 @@ const EmailCrypto = {
     },
     pubKey(RSAKey) {
         return cryptico.publicKeyString(RSAKey);
+    },
+    verify(signature){
+        return signature === "verified";
     }
 };
 export default EmailCrypto

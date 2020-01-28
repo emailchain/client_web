@@ -9,7 +9,7 @@
                 ></v-text-field>
             </v-col>
             <v-col cols="4">
-                <v-btn  @click="generateKey" large>Generate</v-btn>
+                <v-btn  class="mt-1 primary"  @click="generateKey" large>Generate</v-btn>
             </v-col>
         </v-row>
 
@@ -58,9 +58,17 @@
                 const key = EmailCrypto.generateKey(this.passPhrase);
                 this.privKey = JSON.stringify(key);
                 this.pubKey = EmailCrypto.pubKey(key);
+                localStorage.setItem("RSAKey",this.passPhrase)
                 this.passPhrase = "";
                 this.showOutput = true;
-                localStorage.setItem("RSAKey",this.privKey)
+                // let json = function(obj){ return JSON.stringify(obj, function(key, value) {
+                //     if (typeof value === 'function') {
+                //         return value.toString();
+                //     } else {
+                //         return value;
+                //     }
+                // })};
+
             }
         },
     }
