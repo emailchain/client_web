@@ -16,6 +16,9 @@ const EmailCrypto = {
     },
     verify(signature){
         return signature === "verified";
+    },
+    pubKeyID(pubKey){
+        return cryptico.publicKeyID(pubKey);
     }
 };
 export default EmailCrypto

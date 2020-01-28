@@ -6,6 +6,11 @@ const EmailRepo = {
             ...payload
         });
     },
+    sent(payload) {
+        return Repository.post(`${ENDPOINTS.EMAIL}/sent`, {
+            ...payload
+        });
+    },
     add(payload) {
         return Repository.post(`${ENDPOINTS.EMAIL}/new`, {
             ...payload

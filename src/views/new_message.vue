@@ -1,16 +1,28 @@
 <template>
 
     <v-card
-            max-width="800"
-            class="mx-auto mt-9"
+
     >
+        <v-toolbar
+                color="pink"
+                dark
+
+        >
+
+
+            <v-toolbar-title>New Mail</v-toolbar-title>
+
+            <v-spacer></v-spacer>
+
+
+        </v-toolbar>
         <v-snackbar
-                color="error"
+                :color="snackbarColor"
                 top
                 v-model="snackbar"
-                :timeout=2000
+                :timeout=4000
         >
-            {{ errorText }}
+            {{ snackbarMessage }}
         </v-snackbar>
         <v-card-text>
             <v-text-field v-model="to" label="To:"></v-text-field>
@@ -28,10 +40,11 @@
         <v-card-actions>
             <v-btn
                     class="primary"
-                    color="deep-purple accent-4"
+                    color="primary"
                     @click="sendMail"
 
             >
+                <v-icon dark left>mdi-send</v-icon>
                 Send
             </v-btn>
         </v-card-actions>
@@ -47,7 +60,8 @@
                 to: "",
                 subject: "",
                 message: "",
-                errorText: "",
+                snackbarMessage: "",
+                snackbarColor: "success",
                 snackbar: false
             };
         },
@@ -66,14 +80,19 @@
                         recipient: this.to,
                         message: encryption.cipher
                     };
-                    payload.message.toString()
                     const result = await EmailRepo.add(payload);
-                    if(result.data){
-                        result.toString()
+                    if (result.data) {
+                        this.snackbar = true;
+                        this.snackbarMessage = result.data.message;
+                        this.snackbarColor = "success";
+                        this.to = "";
+                        this.subject = "";
+                        this.message = "";
                     }
                 } else {
-                    this.errorText = encryption.status;
                     this.snackbar = true;
+                    this.snackbarMessage = encryption.status;
+                    this.snackbarColor = "error";
                 }
             }
         },

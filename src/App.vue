@@ -1,16 +1,20 @@
 <template>
   <v-app>
+    <v-app-bar app>
+      <!-- -->
+    </v-app-bar>
   <v-navigation-drawer
       app
       permanent
       left
+      class="pt-6"
     >
       <template v-slot:prepend>
         <v-list-item two-line>
 
           <v-list-item-content>
-             <v-btn class="mr-8" color="primary" large rounded dark v-on:click="create()">
-               <v-icon dark left>mdi-email</v-icon>New eamil
+             <v-btn class="mr-8" color="primary" large rounded dark to="/create">
+               <v-icon dark left>mdi-email</v-icon>New email
       </v-btn>
           </v-list-item-content>
         </v-list-item>
@@ -20,7 +24,7 @@
 
       <v-list dense>
       <v-list-item-group  color="primary">
-        <v-list-item @click="input_gn">
+        <v-list-item to="/">
           <v-list-item-icon>
             <v-icon>mdi-inbox</v-icon>
           </v-list-item-icon>
@@ -28,7 +32,7 @@
             <v-list-item-title >Inbox</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item @click="sent_gn">
+        <v-list-item to="/sent">
           <v-list-item-icon>
             <v-icon >mdi-send</v-icon>
           </v-list-item-icon>
@@ -36,14 +40,18 @@
             <v-list-item-title >Sent</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+        <v-list-item to="/aut">
+          <v-list-item-icon>
+            <v-icon >mdi-settings</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title >Settings</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
       </v-list-item-group>
     </v-list>
     </v-navigation-drawer>
 
->>>>>>> 67e0ab383265b6c0320f58c0058d4b8b5524106c
-  <v-app-bar app>
-    <!-- -->
-  </v-app-bar>
 
   <!-- Sizes your content based upon application components -->
   <v-content>
@@ -64,22 +72,7 @@
 </template>
 <script>
 export default {
-  data: () => ({
-      showme:false, }),
-  methods: {
-    change() {
-      this.$router.replace({ path: "/msg_detail" });
-    },
-    input_gn(){
-      this.showme = false;
-    },
-    sent_gn(){
-      this.showme = true;
-    },
-    create() {
-      this.$router.replace({ path: "/create" });
-    }
-    }
+
 }
 </script>
 
