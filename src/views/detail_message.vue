@@ -1,16 +1,15 @@
 <template>
   <v-card
     class="mx-auto"
-    max-width="344"
   >
     <v-card-text>
-      <div>Word of the Day</div>
+      <div></div>
       <p class="display-1 text--primary">
-        be•nev•o•lent
+        [GitHub] @eyuelberga has invited you to join the @emailchain organization
       </p>
-      <p>adjective</p>
-      <div class="text--primary">
-        well meaning and kindly.<br>
+      <p>Sender:</p>
+      <div>
+        well meaning and kindly.
         "a benevolent smile"
       </div>
     </v-card-text>
