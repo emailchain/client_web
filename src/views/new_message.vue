@@ -39,6 +39,7 @@
 </template>
 <script>
     import EmailCrypto from "../crypto";
+    import EmailRepo from "../api/email.api";
 
     export default {
         data() {
@@ -63,12 +64,12 @@
                     const payload = {
                         sender: EmailCrypto.pubKey(key),
                         recipient: this.to,
-                        message: msg
+                        message: encryption.cipher
                     };
-                    // eslint-disable-next-line no-console
-                    console.log(encryption);
-                    // eslint-disable-next-line no-console
-                    console.log(payload)
+                    const result = await EmailRepo.add(payload);
+                    if(result.data){
+
+                    }
                 } else {
                     this.errorText = encryption.status;
                     this.snackbar = true;
