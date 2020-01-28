@@ -17,9 +17,20 @@
       <v-btn
         text
         color="deep-purple accent-4"
+     v-on:click="change()"
       >
-        Learn More
+        back
       </v-btn>
     </v-card-actions>
   </v-card>
 </template>
+
+<script>
+export default {
+  methods:{
+    change(){
+      this.$router.replace({ path: "/" });
+    }
+  }
+}
+</script>
