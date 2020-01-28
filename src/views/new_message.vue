@@ -45,11 +45,17 @@
                     subject: this.subject,
                     message: this.message
                 };
-               let encryption = EmailCrypto.encrypt(JSON.stringify(mail),this.to,key);
+                const msg =JSON.stringify(mail)
+               const encryption = EmailCrypto.encrypt(msg,this.to,key);
                const payload = {
-                    sender:key.pu
+                   sender:EmailCrypto.pubKey(key),
+                   recipient:this.to,
+                   message:msg
                }
-
+                // eslint-disable-next-line no-console
+               console.log(encryption)
+                // eslint-disable-next-line no-console
+                console.log(payload)
             }
         },
     }
