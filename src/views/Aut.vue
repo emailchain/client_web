@@ -16,20 +16,12 @@
         <v-card v-if="showOutput"
                 class="mx-auto">
             <v-card-title>Output</v-card-title>
-            <v-card-subtitle>Key has been saved. To use another account generate a new key with your passphrase. You can also copy the values and store them somewhere safe</v-card-subtitle>
+            <v-card-subtitle>Your Private Key has been saved to local storage. <br>Save the pass phrase you used somewhere safe to register again. Share your public key to anyone who wants to send mail to you</v-card-subtitle>
             <form>
                 <v-card-text>
                     <v-text-field filled
                                   v-model="pubKey"
                                   label="Public Key"
-                                  required
-
-                    ></v-text-field>
-                </v-card-text>
-                <v-card-text>
-                    <v-text-field filled
-                                  v-model="privKey"
-                                  label="Private key"
                                   required
 
                     ></v-text-field>
@@ -48,7 +40,6 @@
         data() {
             return {
                 pubKey: "",
-                privKey: "",
                 passPhrase: "",
                 showOutput: false
             };
@@ -61,13 +52,6 @@
                 localStorage.setItem("RSAKey",this.passPhrase)
                 this.passPhrase = "";
                 this.showOutput = true;
-                // let json = function(obj){ return JSON.stringify(obj, function(key, value) {
-                //     if (typeof value === 'function') {
-                //         return value.toString();
-                //     } else {
-                //         return value;
-                //     }
-                // })};
 
             }
         },
